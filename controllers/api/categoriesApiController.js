@@ -19,6 +19,23 @@ const controller = {
             }
         })
         res.send(manCategories)
+    },
+
+    showInviernoCategories: async(req,res) =>{
+        let winterCategories = await Subcategory.findAll({
+            where: {
+                mujerId:1
+            }
+        })
+        res.send(winterCategories)
+    },
+    showVeranoCategories: async(req,res) =>{
+        let winterCategories = await Subcategory.findAll({
+            where: {
+                mujerId:3
+            }
+        })
+        res.send(winterCategories)
     }
 }
 
