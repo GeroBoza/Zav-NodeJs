@@ -53,7 +53,7 @@ const controller = {
             } else{
                 sex = "hombre"
             }
-
+            
             let obj = {
                 "data": products,
                 "menuItems": menuItems,
@@ -99,9 +99,17 @@ const controller = {
                 order: ["name"],
             });
 
+            let sex
+            if (product.subcategory.categoryId == 1) {
+                sex = "mujer"
+            } else{
+                sex = "hombre"
+            }
+
             let obj = {
                 "data": product,
-                "menuItems": menuItems
+                "menuItems": menuItems,
+                "url": sex
             }
 
             res.send(obj);

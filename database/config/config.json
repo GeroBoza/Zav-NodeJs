@@ -15,10 +15,10 @@
         "operatorsAliases": false
     },
     "production": {
-        "username": "geroboza",
-        "password": "g38369610.",
+        "username": "root",
+        "password": "",
         "database": "zapateriaavenida",
-        "host": "aameu73q86a88c.c9hc8toronlh.sa-east-1.rds.amazonaws.com",
+        "host": "127.0.0.1",
         "dialect": "mysql",
         "operatorsAliases": false
     }
