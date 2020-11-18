@@ -47,20 +47,20 @@ const controller = {
                 ],
             });
 
-            let sex
+            let sex;
             if (subcategory.categoryId == 1) {
-                sex = "mujer"
-            } else{
-                sex = "hombre"
-            }
-            
-            let obj = {
-                "data": products,
-                "menuItems": menuItems,
-                "url": sex
+                sex = "mujer";
+            } else {
+                sex = "hombre";
             }
 
-             res.send(obj);
+            let obj = {
+                data: products,
+                menuItems: menuItems,
+                url: sex,
+            };
+
+            res.send(obj);
 
             // res.render("products", {
             //     category: subcategory.category.name,
@@ -72,7 +72,7 @@ const controller = {
             res.send(error);
         }
     },
-    showProductDetail: async(req,res) =>{
+    showProductDetail: async (req, res) => {
         try {
             let id = req.params.id;
             const product = await Product.findOne({
@@ -99,24 +99,28 @@ const controller = {
                 order: ["name"],
             });
 
-            let sex
+            let sex;
             if (product.subcategory.categoryId == 1) {
-                sex = "mujer"
-            } else{
-                sex = "hombre"
+                sex = "mujer";
+            } else {
+                sex = "hombre";
             }
 
             let obj = {
-                "data": product,
-                "menuItems": menuItems,
-                "url": sex
-            }
+                data: product,
+                menuItems: menuItems,
+                url: sex,
+            };
 
             res.send(obj);
         } catch (error) {
-            res.send(error)
+            res.send(error);
         }
-    }
-}
+    },
+
+    addProduct: async (req, res) => {
+        res.send(req);
+    },
+};
 
 module.exports = controller;
